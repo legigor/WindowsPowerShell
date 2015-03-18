@@ -7,7 +7,8 @@
 . (Resolve-Path ~\Documents\WindowsPowershell\Modules\posh-hg\profile.example.ps1)
 
 Import-Module PSReadLine
-
+Import-Module z
+Import-Module PsHosts
 
 # Overriding the prompt with one from posh-git
 function global:prompt {
