@@ -12,6 +12,9 @@ Import-Module PsHosts
 
 # Overriding the prompt with one from posh-git
 function global:prompt {
+
+    Write-Host('PS ') -nonewline 
+
     $realLASTEXITCODE = $LASTEXITCODE
 
     # Reset color, which can be messed up by Enable-GitColors
@@ -24,7 +27,7 @@ function global:prompt {
     $global:LASTEXITCODE = $realLASTEXITCODE
 
     Write-Host
-    Write-Host('$') -nonewline -foregroundcolor Gray
+    Write-Host('$') -nonewline
 
     return " "
 }
