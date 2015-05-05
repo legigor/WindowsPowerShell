@@ -17,6 +17,7 @@ Param(
     [Parameter(ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true, Mandatory=$true, Position=0)]
     [String]$Command,
     [String]$Destination = "http://localhost:8100/Commands/Legacy/",
+    # [String]$Destination = "http://78.129.225.12:8100/Services/Commands/Legacy/",
     [Parameter(ValueFromRemainingArguments=$true)]
     $Data
 )
@@ -34,7 +35,7 @@ Param(
     }
 
     # POST!
-    Write-Host Posting to $Destination
+    Write-Host Sending command to $Destination
     Write-Url $Destination -Data $preparedData -Timeout 00:59:00
 }
 
